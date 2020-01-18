@@ -1,0 +1,15 @@
+version: "3"
+services:
+  django:
+    build: .
+    image: sberlance/file-server:latest
+    container_name: sberlance-fileserver
+    ports:
+      - "3001:3001"
+    networks:
+      - composer_default
+    tty: true
+networks:
+  composer_default:
+    external:
+      name: composer_default
